@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Icon } from "./components/Icon";
+import { InstallPrompt } from "./components/InstallPrompt";
 import {
   person,
   contactLinks,
@@ -66,6 +67,8 @@ export default function Home() {
             <span className="text-sm font-medium">Запази контакт</span>
           </a>
         </section>
+
+        <InstallPrompt />
 
         {/* Основен CTA бутон */}
         <section className="w-full">

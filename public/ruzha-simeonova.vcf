@@ -5,5 +5,6 @@ FN:Ружа Симеонова
 TITLE:Психотерапевт
 TEL;TYPE=CELL,VOICE:+359877413071
 EMAIL;TYPE=INTERNET:ruzha.simeonova@gmail.com
-URL:https://www.facebook.com/altiathc
+URL;TYPE=Website:https://ruzhasimeonova.eu
+URL;TYPE=Facebook:https://www.facebook.com/altiathc
 END:VCARD

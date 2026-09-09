@@ -6,7 +6,9 @@ type IconName =
   | "vcard"
   | "facebook"
   | "instagram"
-  | "website";
+  | "website"
+  | "install"
+  | "share";
 
 export function Icon({ name, className }: { name: IconName; className?: string }) {
   const props = {
@@ -82,6 +84,20 @@ export function Icon({ name, className }: { name: IconName; className?: string }
           <circle cx="12" cy="12" r="8.5" />
           <path d="M3.5 12h17" />
           <path d="M12 3.5c2.2 2.3 3.4 5.3 3.4 8.5s-1.2 6.2-3.4 8.5c-2.2-2.3-3.4-5.3-3.4-8.5s1.2-6.2 3.4-8.5Z" />
+        </svg>
+      );
+    case "install":
+      return (
+        <svg {...props}>
+          <rect x="4" y="3.5" width="16" height="17" rx="4.5" />
+          <path d="M12 9v6M9.2 12.2 12 15l2.8-2.8" />
+        </svg>
+      );
+    case "share":
+      return (
+        <svg {...props}>
+          <path d="M12 15V4M8.2 7.8 12 4l3.8 3.8" />
+          <path d="M5.5 12v6.5c0 .8.7 1.5 1.5 1.5h10c.8 0 1.5-.7 1.5-1.5V12" />
         </svg>
       );
     default:
