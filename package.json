@@ -1,15 +1,17 @@
 {
-  "name": "ruzha-scaffold",
+  "name": "ruzha-simeonova",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "generate:qr": "node scripts/generate-qr.mjs"
   },
   "dependencies": {
     "next": "16.3.4",
+    "qrcode": "^1.5.4",
     "react": "19.2.8",
     "react-dom": "19.2.8"
   },

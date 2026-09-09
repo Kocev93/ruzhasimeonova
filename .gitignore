@@ -36,6 +36,9 @@ yarn-error.log*
 # vercel
 .vercel
 
+# original unprocessed source assets (kept locally, not deployed)
+/_source-assets
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

@@ -1,36 +1,52 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Дигитална визитка — Ружа Симеонова
 
-## Getting Started
+Статична, еднократна дигитална визитка (pilot проект). Next.js (App Router) + TypeScript +
+Tailwind CSS. Цялото съдържание е hardcoded в [`app/content.ts`](app/content.ts) — няма база
+данни, няма админ панел, няма плащания.
 
-First, run the development server:
+## Локална разработка
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Отвори [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## QR код
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+QR кодът, сочещ към финалния Vercel адрес, се генерира локално (без платени услуги) с
+пакета [`qrcode`](https://www.npmjs.com/package/qrcode):
 
-## Learn More
+```bash
+npm run generate:qr
+```
 
-To learn more about Next.js, take a look at the following resources:
+Резултатите се записват в `public/qr-code.png` и `public/qr-code.svg`. Ако финалният домейн
+се различава от `https://ruzha-simeonova.vercel.app`, подай го като аргумент:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+node scripts/generate-qr.mjs https://ruzha-simeonova-zentio.vercel.app
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Деплой във Vercel (безплатен Hobby план)
 
-## Deploy on Vercel
+1. Качи проекта в частен GitHub repo:
+   ```bash
+   git init
+   git add .
+   git commit -m "Initial commit"
+   git branch -M main
+   git remote add origin <адрес на твоя GitHub repo>
+   git push -u origin main
+   ```
+2. Отиди на [vercel.com/new](https://vercel.com/new) → Import Git Repository → избери repo-то.
+3. Име на проекта: `ruzha-simeonova` (ако е заето: `ruzha-simeonova-zentio`).
+4. Framework се разпознава автоматично като Next.js — не са нужни допълнителни настройки или
+   променливи на средата.
+5. Deploy. Сайтът ще бъде достъпен на `https://ruzha-simeonova.vercel.app` (или резервното име).
+6. (По желание) Ако финалният адрес се различи, регенерирай QR кода с новия адрес (виж по-горе)
+   и redeploy-ни, за да влезе новият `public/qr-code.png` в проекта.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Всичко в проекта работи в рамките на безплатния Vercel Hobby план и безплатните `*.vercel.app`
+поддомейни — не се изисква кредитна карта, платен план или платен API ключ.
