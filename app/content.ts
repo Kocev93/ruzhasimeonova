@@ -51,6 +51,11 @@ export const audiences = [
 
 export const socialLinks = [
   {
+    label: "Уебсайт",
+    href: "https://ruzhasimeonova.eu",
+    icon: "website",
+  },
+  {
     label: "Facebook",
     href: "https://www.facebook.com/altiathc",
     icon: "facebook",

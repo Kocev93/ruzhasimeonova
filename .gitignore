@@ -39,6 +39,9 @@ yarn-error.log*
 # original unprocessed source assets (kept locally, not deployed)
 /_source-assets
 
+# Claude Code local session files
+/.claude/scheduled_tasks.lock
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

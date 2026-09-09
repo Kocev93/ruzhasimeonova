@@ -5,7 +5,8 @@ type IconName =
   | "email"
   | "vcard"
   | "facebook"
-  | "instagram";
+  | "instagram"
+  | "website";
 
 export function Icon({ name, className }: { name: IconName; className?: string }) {
   const props = {
@@ -73,6 +74,14 @@ export function Icon({ name, className }: { name: IconName; className?: string }
           <rect x="3.5" y="3.5" width="17" height="17" rx="5" />
           <circle cx="12" cy="12" r="4" />
           <circle cx="17.2" cy="6.8" r="0.6" fill="currentColor" stroke="none" />
+        </svg>
+      );
+    case "website":
+      return (
+        <svg {...props}>
+          <circle cx="12" cy="12" r="8.5" />
+          <path d="M3.5 12h17" />
+          <path d="M12 3.5c2.2 2.3 3.4 5.3 3.4 8.5s-1.2 6.2-3.4 8.5c-2.2-2.3-3.4-5.3-3.4-8.5s1.2-6.2 3.4-8.5Z" />
         </svg>
       );
     default:
