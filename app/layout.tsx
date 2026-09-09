@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Playfair_Display, Inter } from "next/font/google";
 import { siteUrl, person } from "./content";
 import "./globals.css";
@@ -24,6 +24,12 @@ export const metadata: Metadata = {
   description,
   icons: {
     icon: "/images/logo.png",
+    apple: "/apple-touch-icon.png",
+  },
+  appleWebApp: {
+    capable: true,
+    title: person.name,
+    statusBarStyle: "default",
   },
   openGraph: {
     title,
@@ -40,6 +46,10 @@ export const metadata: Metadata = {
     description,
     images: ["/images/logo.png"],
   },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#FBF6EE",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
