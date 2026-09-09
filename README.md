@@ -22,31 +22,30 @@ QR кодът, сочещ към финалния Vercel адрес, се ген
 npm run generate:qr
 ```
 
-Резултатите се записват в `public/qr-code.png` и `public/qr-code.svg`. Ако финалният домейн
-се различава от `https://ruzha-simeonova.vercel.app`, подай го като аргумент:
+Резултатите се записват в `public/qr-code.png` и `public/qr-code.svg`. Ако адресът се промени
+в бъдеще, подай го като аргумент:
 
 ```bash
-node scripts/generate-qr.mjs https://ruzha-simeonova-zentio.vercel.app
+node scripts/generate-qr.mjs https://ruzhasimeonova.vercel.app
 ```
 
-## Деплой във Vercel (безплатен Hobby план)
+## Деплой (безплатен Vercel Hobby план)
 
-1. Качи проекта в частен GitHub repo:
-   ```bash
-   git init
-   git add .
-   git commit -m "Initial commit"
-   git branch -M main
-   git remote add origin <адрес на твоя GitHub repo>
-   git push -u origin main
-   ```
-2. Отиди на [vercel.com/new](https://vercel.com/new) → Import Git Repository → избери repo-то.
-3. Име на проекта: `ruzha-simeonova` (ако е заето: `ruzha-simeonova-zentio`).
-4. Framework се разпознава автоматично като Next.js — не са нужни допълнителни настройки или
-   променливи на средата.
-5. Deploy. Сайтът ще бъде достъпен на `https://ruzha-simeonova.vercel.app` (или резервното име).
-6. (По желание) Ако финалният адрес се различи, регенерирай QR кода с новия адрес (виж по-горе)
-   и redeploy-ни, за да влезе новият `public/qr-code.png` в проекта.
+Проектът е свързан с GitHub repo [`Kocev93/ruzhasimeonova`](https://github.com/Kocev93/ruzhasimeonova)
+и се деплойва автоматично във Vercel при всеки push към `main`.
+
+**Публичен адрес:** [`https://ruzhasimeonova.vercel.app`](https://ruzhasimeonova.vercel.app)
+
+За нов push:
+
+```bash
+git add .
+git commit -m "..."
+git push
+```
+
+Vercel хваща push-а автоматично и redeploy-ва сайта — не са нужни допълнителни настройки или
+променливи на средата.
 
 Всичко в проекта работи в рамките на безплатния Vercel Hobby план и безплатните `*.vercel.app`
 поддомейни — не се изисква кредитна карта, платен план или платен API ключ.

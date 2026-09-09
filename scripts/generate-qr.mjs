@@ -7,7 +7,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const outDir = join(__dirname, "..", "public");
 mkdirSync(outDir, { recursive: true });
 
-const url = process.argv[2] || "https://ruzha-simeonova.vercel.app";
+const url = process.argv[2] || "https://ruzhasimeonova.vercel.app";
 
 const options = {
   errorCorrectionLevel: "M",
