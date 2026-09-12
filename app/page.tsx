@@ -5,7 +5,6 @@ import {
   person,
   contactLinks,
   bookingUrl,
-  audiences,
   socialLinks,
   footerDisclaimer,
 } from "./content";
@@ -82,51 +81,35 @@ export default function Home() {
           </a>
         </section>
 
-        {/* Три раздела */}
-        <section className="w-full flex flex-col gap-4">
-          {audiences.map((item, i) => (
-            <div
-              key={item.title}
-              className="rounded-3xl p-6 border"
-              style={{
-                background:
-                  i === 0
-                    ? "color-mix(in srgb, var(--color-lavender) 14%, white)"
-                    : i === 1
-                    ? "color-mix(in srgb, var(--color-accent-pink) 18%, white)"
-                    : "color-mix(in srgb, var(--color-accent-gold) 10%, white)",
-                borderColor:
-                  i === 0
-                    ? "color-mix(in srgb, var(--color-lavender) 45%, transparent)"
-                    : i === 1
-                    ? "color-mix(in srgb, var(--color-accent-pink) 55%, transparent)"
-                    : "color-mix(in srgb, var(--color-accent-gold) 45%, transparent)",
-              }}
-            >
-              <h2 className="font-heading text-xl text-primary-text mb-2">
-                {item.title}
-              </h2>
-              <p className="text-[14.5px] leading-relaxed text-primary-text/80">
-                {item.text}
-              </p>
-            </div>
-          ))}
-        </section>
-
         {/* Социални линкове */}
-        <section className="flex items-center gap-5">
-          {socialLinks.map((s) => (
-            <a
-              key={s.label}
-              href={s.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={s.label}
-              className="flex items-center justify-center w-12 h-12 rounded-full border border-accent-gold/40 text-primary-text transition-all duration-300 hover:bg-accent-gold/15 hover:border-accent-gold active:scale-[0.95]"
-            >
-              <Icon name={s.icon} className="w-5 h-5" />
-            </a>
-          ))}
+        <section className="flex flex-col items-center gap-4">
+          <div className="flex items-center gap-5">
+            {socialLinks.map((s) => (
+              <a
+                key={s.label}
+                href={s.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={s.label}
+                className="flex items-center justify-center w-12 h-12 rounded-full border border-accent-gold/40 text-primary-text transition-all duration-300 hover:bg-accent-gold/15 hover:border-accent-gold active:scale-[0.95]"
+              >
+                <Icon name={s.icon} className="w-5 h-5" />
+              </a>
+            ))}
+          </div>
+
+          <div className="flex flex-col items-center gap-1.5">
+            <img
+              src="/qr-code.svg"
+              alt="QR код към визитката"
+              width={72}
+              height={72}
+              className="w-[72px] h-[72px] rounded-xl border border-accent-gold/30"
+            />
+            <span className="text-[11px] text-primary-text/40">
+              Сканирай тази визитка
+            </span>
+          </div>
         </section>
       </div>
 
