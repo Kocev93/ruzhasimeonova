@@ -6,6 +6,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: `${person.name} — ${person.title}`,
     short_name: person.name,
     description: person.bio,
+    id: "/",
     start_url: "/",
     display: "standalone",
     background_color: "#FBF6EE",
@@ -21,6 +22,12 @@ export default function manifest(): MetadataRoute.Manifest {
         src: "/icon-512.png",
         sizes: "512x512",
         type: "image/png",
+      },
+      {
+        src: "/icon-maskable-512.png",
+        sizes: "512x512",
+        type: "image/png",
+        purpose: "maskable",
       },
     ],
   };
